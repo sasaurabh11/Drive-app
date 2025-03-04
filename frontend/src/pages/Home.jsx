@@ -35,6 +35,7 @@ const Home = () => {
           <p className="text-gray-400 mt-2">
             Access your letters and start editing.
           </p>
+          <h1 className="">If Loggen In Already. Please refresh!!!!!!</h1>
         </div>
       )}
     </div>
