@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
 const Navbar = () => {
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  const { storedToken, setStoredToken } = useContext(AppContext)
 
   useEffect(() => {
     const handleStorageChange = () => {
-      setToken(localStorage.getItem("token"));
+      setStoredToken(localStorage.getItem("token"));
     };
 
     window.addEventListener("storage", handleStorageChange);
@@ -19,7 +20,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("accessToken");
-    setToken(null);
+    setStoredToken(null);
   };
 
   return (
@@ -34,17 +35,17 @@ const Navbar = () => {
       </Link>
 
       <div>
-        {token ? (
+        {storedToken ? (
           <button
             onClick={handleLogout}
-            className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md transition duration-300"
+            className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md transition duration-300 cursor-pointer"
           >
             Logout
           </button>
         ) : (
           <Link
             to="/login"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition duration-300"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition duration-300 cursor-pointer"
           >
             Login
           </Link>

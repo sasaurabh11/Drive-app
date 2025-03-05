@@ -16,7 +16,7 @@ const Login = () => {
         <p className="text-gray-400 mb-4">Access your account using Google</p>
         <button
           onClick={handleLogin}
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300 cursor-pointer"
         >
           Sign in with Google
         </button>

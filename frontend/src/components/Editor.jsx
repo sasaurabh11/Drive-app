@@ -94,7 +94,7 @@ const Editor = ({ accessToken }) => {
 
       <button
         onClick={handleSave}
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-md transition duration-300"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-md transition duration-300 cursor-pointer"
       >
         Save to Google Drive
       </button>
